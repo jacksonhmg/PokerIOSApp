@@ -14,14 +14,16 @@ struct ContentView: View {
             VStack{
                 Image("logo")
                     .resizable()
-                    .frame(width: 100.0, height: 100.0)
+                    .frame(width: 200.0, height: 200.0)
                         .aspectRatio(contentMode: .fit)
-                        .padding(.all, 30.0)
+                        .padding(.bottom, 30.0)
                 HStack{
                     Image("card2")
+                        .padding(.trailing,40)
+                    
                     Image("card3")
 
-                }
+                }.padding(.bottom,20)
                 Button(action: {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                 }) {
