@@ -11,8 +11,8 @@ struct ContentView: View {
     @State var playerCard = "card2"
     @State var cpuCard = "card5"
     
-    var playerScore = 0
-    var cpuScore = 0
+    @State var playerScore = 0
+    @State var cpuScore = 0
     
     var body: some View {
         ZStack{
@@ -62,10 +62,19 @@ struct ContentView: View {
     
     func deal() {
         // randomise player cards
-        playerCard = "card" + String(Int.random(in: 2...14))
+        var pCardInt = Int.random(in: 2...14)
+        playerCard = "card" + String(pCardInt)
         //randomise cpu cards
-        cpuCard = "card" + String(Int.random(in: 2...14))
+        var cpuCardInt = Int.random(in: 2...14)
+        cpuCard = "card" + String(cpuCardInt)
         //update scores
+        if(pCardInt > cpuCardInt) {
+            playerScore += 1;
+        }
+        else if (cpuCardInt > pCardInt) {
+            cpuScore += 1;
+        }
+        
     }
 }
 
