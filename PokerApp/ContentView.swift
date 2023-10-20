@@ -10,15 +10,42 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack{
-            Color(.black).ignoresSafeArea()
+            Color(.green).ignoresSafeArea()
             VStack{
-                Image("img")
-                        .resizable()
-                        .cornerRadius(10)
+                Image("logo")
+                    .resizable()
+                    .frame(width: 100.0, height: 100.0)
                         .aspectRatio(contentMode: .fit)
                         .padding(.all, 30.0)
-                Text("hey")
-                    .foregroundColor(Color.yellow)
+                HStack{
+                    Image("card2")
+                    Image("card3")
+
+                }
+                Button(action: {
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                }) {
+                    Image("button")
+                }
+                HStack(spacing: 0.0){
+                    Spacer()
+
+                    VStack{
+                        Text("Player").padding(.bottom, 10)
+                        Text("0")
+                    }
+                    Spacer()
+                    VStack{
+                        Text("CPU").padding(.bottom, 10)
+                        Text("0")
+                    }
+                    Spacer()
+
+                }
+                .padding(.top, 11.0)
+                .foregroundColor(Color.white)
+                .fontWeight(.bold)
+                .font(.title)
             }
         }
         
