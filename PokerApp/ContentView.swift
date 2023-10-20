@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    var playerCard = "card2"
-    var cpuCard = "card5"
+    @State var playerCard = "card2"
+    @State var cpuCard = "card5"
     
     var playerScore = 0
     var cpuScore = 0
@@ -61,7 +61,11 @@ struct ContentView: View {
     }
     
     func deal() {
-        print("Dealt")
+        // randomise player cards
+        playerCard = "card" + String(Int.random(in: 2...14))
+        //randomise cpu cards
+        cpuCard = "card" + String(Int.random(in: 2...14))
+        //update scores
     }
 }
 
